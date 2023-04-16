@@ -1,51 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printnbr.c                                      :+:      :+:    :+:   */
+/*   ft_printhexnbr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npatron <npatron@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 18:40:52 by nicolas           #+#    #+#             */
-/*   Updated: 2023/04/16 16:29:18 by npatron          ###   ########.fr       */
+/*   Created: 2023/04/16 15:57:53 by npatron           #+#    #+#             */
+/*   Updated: 2023/04/16 17:25:57 by npatron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "ft_printf.h"
 
-int	intmin(int nb)
+int	ft_printhexlnbr(unsigned long long nb)
 {
-	int	i;
+	int			i;
+	char const	*s;
 
 	i = 0;
-	if (nb == -2147483648)
-		write(1, "-2147483648", 12);
-	return (i + 11);
-}
-
-int	ft_printnbr(int nb)
-{
-	int	i;
-
-	i = 0;
-	if (nb == -2147483648)
-		intmin(-2147483648);
-	if (nb < 0)
+	s = "0123456789abcdef";
+	if (nb)
 	{
-		write(1, "-", 1);
-		nb = -nb;
-		i = 1;
-	}
-	if (nb >= 0 && nb < 10)
-	{
-		ft_putchar(nb + '0');
-		i++;
-	}
-	if (nb >= 10)
-	{
-		ft_printnbr(nb / 10);
-		ft_putchar(nb % 10 + '0');
+		i = ft_printhexlnbr(nb / 16);
+		ft_putchar(s[nb % 16]);
 		i++;
 	}
 	return (i);
 }
+
+int	ft_printhexbnbr(unsigned long long nb)
+{
+	int			i;
+	char const	*s;
+
+	i = 0;
+	s = "0123456789ABCDEF";
+	if (nb)
+	{
+		i = ft_printhexbnbr(nb / 16);
+		ft_putchar(s[nb % 16]);
+		i++;
+	}
+	return (i);
+}
+/*
+int main()
+{
+	ft_printhexlnbr(0);
+	return (0);
+}
+*/

@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+         #
+#    By: npatron <npatron@student.42nice.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:49:07 by npatron           #+#    #+#              #
-#    Updated: 2023/04/15 19:28:36 by nicolas          ###   ########.fr        #
+#    Updated: 2023/04/16 16:49:07 by npatron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_printstr.c ft_printnbr.c ft_printunsnbr.c ft_putchar.c
+SRC = ft_printf.c ft_printstr.c ft_printnbr.c ft_printunsnbr.c ft_putchar.c ft_printhexnbr.c
 
 OBJ = $(SRC:.c=.o)
 
