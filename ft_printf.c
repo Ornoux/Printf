@@ -6,7 +6,7 @@
 /*   By: npatron <npatron@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 17:26:00 by nicolas           #+#    #+#             */
-/*   Updated: 2023/04/16 17:22:39 by npatron          ###   ########.fr       */
+/*   Updated: 2023/04/18 12:11:22 by npatron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	ft_whattype(va_list arg, const char str)
 	if (str == 'u')
 		count += ft_printunsnbr(va_arg(arg, int));
 	if (str == 'x')
-		count += ft_printhexlnbr(va_arg(arg, int));
+		count += ft_printhexlnbr(va_arg(arg, unsigned int));
 	if (str == 'X')
-		count += ft_printhexbnbr(va_arg(arg, int));
+		count += ft_printhexbnbr(va_arg(arg, unsigned int));
 	if (str == 'p')
 	{
 		write(1, "0x", 2);
@@ -77,7 +77,7 @@ int main(void)
 	int c;
 
 	c = 5;
-    ft_printf(" %p %p\n", 0, 0);
+    ft_printf("%p %p\n", 0, 0);
 	printf(" %p %p", 0, 0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: npatron <npatron@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 19:07:36 by nicolas           #+#    #+#             */
-/*   Updated: 2023/04/16 16:32:06 by npatron          ###   ########.fr       */
+/*   Updated: 2023/04/18 12:03:33 by npatron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int				ft_printunsnbr(unsigned int nb);
 void			ft_putchar(char c);
 int				ft_printhexbnbr(unsigned long long nb);
 int				ft_printhexlnbr(unsigned long long nb);
+int				ft_printchar(char c);
 
 #endif

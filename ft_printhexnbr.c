@@ -6,7 +6,7 @@
 /*   By: npatron <npatron@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 15:57:53 by npatron           #+#    #+#             */
-/*   Updated: 2023/04/16 17:25:57 by npatron          ###   ########.fr       */
+/*   Updated: 2023/04/18 12:10:58 by npatron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@ int	ft_printhexlnbr(unsigned long long nb)
 
 	i = 0;
 	s = "0123456789abcdef";
-	if (nb)
-	{
+	if (nb >= 16)
 		i = ft_printhexlnbr(nb / 16);
-		ft_putchar(s[nb % 16]);
-		i++;
-	}
+	ft_putchar(s[nb % 16]);
+	i++;
 	return (i);
 }
 
@@ -36,18 +34,16 @@ int	ft_printhexbnbr(unsigned long long nb)
 
 	i = 0;
 	s = "0123456789ABCDEF";
-	if (nb)
-	{
+	if (nb >= 16)
 		i = ft_printhexbnbr(nb / 16);
-		ft_putchar(s[nb % 16]);
-		i++;
-	}
+	ft_putchar(s[nb % 16]);
+	i++;
 	return (i);
 }
 /*
 int main()
 {
-	ft_printhexlnbr(0);
+	printf("%d", ft_printhexlnbr(-1));
 	return (0);
 }
 */
